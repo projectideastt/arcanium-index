@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="MythShelf is a personal reading archive for fantasy, science fiction, classics, local lore and open portals." />
   <title>Home | MythShelf</title>
+  <link rel="icon" href="assets/mythicshelf-01.ico" sizes="any" />
+  <link rel="shortcut icon" href="assets/mythicshelf-01.ico" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
@@ -12,10 +14,14 @@
     <div class="ms-shell">
       
 <nav class="ms-nav">
-  <a class="ms-brand" href="index.html"><span class="ms-mark">◆</span><span>MythShelf</span></a>
+  <a class="ms-brand" href="index.html">
+    <img class="ms-logo-img" src="assets/mythicshelf-01.png" alt="MythShelf logo" />
+    <span>MythShelf</span>
+  </a>
   <div class="ms-links">
     <a href="index.html">Home</a>
     <a href="shelf.html">Full Shelf</a>
+    <a href="recommends.html">Recommends</a>
     <a href="wish-shelf.html">Wish Shelf</a>
     <a href="writing.html">Writing</a>
   </div>
@@ -32,11 +38,21 @@
       <a class="btn btn-secondary" href="wish-shelf.html">Vote the Next Quest</a>
     </div>
   </div>
+
   <div class="hero-panel">
     <div class="feature-stack">
-      <div class="float-book"><small>Top Pick</small><strong>Golden Son</strong></div>
-      <div class="float-book"><small>Chosen Quest</small><strong>The Stormlight Archive</strong></div>
-      <div class="float-book"><small>Open Portal</small><strong>The Name of the Wind</strong></div>
+      <div class="float-book" id="heroTopPick">
+        <small>Top Pick</small>
+        <strong>Golden Son</strong>
+      </div>
+      <div class="float-book" id="heroChosenQuest">
+        <small>Chosen Quest</small>
+        <strong>The Way of Kings</strong>
+      </div>
+      <div class="float-book" id="heroOpenPortal">
+        <small>Open Portal</small>
+        <strong>The Name of the Wind</strong>
+      </div>
     </div>
   </div>
 </header>
@@ -59,7 +75,7 @@
 <section id="top10">
   <div class="section-head">
     <div><div class="eyebrow">The short list</div><h2>Top 10 <span>recommended.</span></h2></div>
-    <p>Not just the highest-rated books — these are the stories I would most actively point someone toward.</p>
+    <p>Stories I would most actively point someone toward based on impact, memory, momentum and personal endorsement.</p>
   </div>
   <div class="carousel-wrap"><div class="carousel-track" id="top10Track"></div></div>
 </section>
@@ -67,12 +83,12 @@
 <section>
   <div class="section-head">
     <div><div class="eyebrow">Vote the next quest</div><h2>Wish <span>Shelf.</span></h2></div>
-    <p>A clean teaser for books waiting at the edge of the shelf. The full page handles voting and suggestions.</p>
+    <p>Books waiting at the edge of the shelf. Help choose what moves closer to the reading queue.</p>
   </div>
   <div class="card-grid grid-3">
-    <article class="panel"><h3>The Blade Itself</h3><p>Joe Abercrombie · Grimdark Fantasy</p><div class="pill-row"><span class="pill score">18 sample votes</span><span class="pill status">Top Wish</span></div><a class="btn btn-primary" href="wish-shelf.html">Vote</a></article>
-    <article class="panel"><h3>The Silmarillion</h3><p>J. R. R. Tolkien · Mythic Fantasy</p><div class="pill-row"><span class="pill score">12 sample votes</span><span class="pill status">Mythic</span></div><a class="btn btn-primary" href="wish-shelf.html">Vote</a></article>
-    <article class="panel"><h3>Dune</h3><p>Frank Herbert · Science Fiction</p><div class="pill-row"><span class="pill score">9 sample votes</span><span class="pill blue-pill">Sci-Fi</span></div><a class="btn btn-primary" href="wish-shelf.html">Vote</a></article>
+    <article class="panel"><h3>The Blade Itself</h3><p>Joe Abercrombie · Grimdark Fantasy</p><div class="pill-row"><span class="pill status">Top Wish</span><span class="pill score">18 votes</span></div><a class="btn btn-primary" href="wish-shelf.html">Vote</a></article>
+    <article class="panel"><h3>The Silmarillion</h3><p>J. R. R. Tolkien · Mythic Fantasy</p><div class="pill-row"><span class="pill status">Mythic</span><span class="pill score">12 votes</span></div><a class="btn btn-primary" href="wish-shelf.html">Vote</a></article>
+    <article class="panel"><h3>Dune</h3><p>Frank Herbert · Science Fiction</p><div class="pill-row"><span class="pill blue-pill">Sci-Fi</span><span class="pill score">9 votes</span></div><a class="btn btn-primary" href="wish-shelf.html">Vote</a></article>
   </div>
 </section>
 
@@ -82,9 +98,9 @@
     <p>Three ways books entered the shelf: early discovery, chosen quests, and open portals.</p>
   </div>
   <div class="card-grid grid-3">
-    <article class="panel"><h3>First Pages</h3><p>School, library, borrowed books, childhood series and early reading memories.</p><div class="era-count" data-era-count="First Pages">—</div><a class="teaser-link" href="shelf.html?era=First%20Pages">View First Pages →</a></article>
-    <article class="panel"><h3>Chosen Quests</h3><p>Books selected later through audiobooks, purchases, recommendations and deeper curiosity.</p><div class="era-count" data-era-count="Chosen Quests">—</div><a class="teaser-link" href="shelf.html?era=Chosen%20Quests">View Chosen Quests →</a></article>
-    <article class="panel"><h3>Open Portals</h3><p>Current reads, paused journeys, unfinished series and books waiting for the right season.</p><div class="era-count" data-era-count="Open Portals">—</div><a class="teaser-link" href="shelf.html?era=Open%20Portals">View Open Portals →</a></article>
+    <article class="panel"><h3>First Pages</h3><p>School, library, borrowed books, childhood series and early reading memories.</p><div class="era-count" data-era-count="First Pages">—</div><a class="teaser-link" href="shelf.html">View First Pages →</a></article>
+    <article class="panel"><h3>Chosen Quests</h3><p>Books selected later through audiobooks, purchases, recommendations and deeper curiosity.</p><div class="era-count" data-era-count="Chosen Quests">—</div><a class="teaser-link" href="shelf.html">View Chosen Quests →</a></article>
+    <article class="panel"><h3>Open Portals</h3><p>Current reads, paused journeys, unfinished series and books waiting for the right season.</p><div class="era-count" data-era-count="Open Portals">—</div><a class="teaser-link" href="shelf.html">View Open Portals →</a></article>
   </div>
 </section>
 
@@ -94,9 +110,21 @@
     <p>A small but meaningful place for Caribbean fiction, folklore, history, culture and non-fiction that shapes story and place.</p>
   </div>
   <div class="card-grid grid-3">
-    <article class="panel"><h3>Local Fiction</h3><p>Caribbean novels, short stories and speculative works that belong on the shelf.</p><span class="pill status">Growing shelf</span></article>
+    <article class="panel"><h3>Local Fiction</h3><p>Caribbean novels, short stories and speculative works that belong on the shelf.</p><div class="pill-row"><span class="pill status">Coming soon</span></div></article>
     <article class="panel"><h3>Folklore and Myth</h3><p>Books and notes that connect local memory, oral tradition, monsters, spirits and mythic storytelling.</p><span class="pill blue-pill">Story fuel</span></article>
     <article class="panel"><h3>Non-Fiction Roots</h3><p>History, geography, environment and culture books that inform original writing and worldbuilding.</p><span class="pill">Research shelf</span></article>
+  </div>
+</section>
+
+
+<section>
+  <div class="section-head">
+    <div><div class="eyebrow">Shelf recommendation tools</div><h2>Shelf <span>Recommends.</span></h2></div>
+    <p>Use archetype blends or book-to-book paths to let the shelf point you toward something to read.</p>
+  </div>
+  <div class="card-grid grid-2">
+    <article class="panel"><h3>Explore by Archetype</h3><p>Choose up to three story forces such as The Shadow, The Rebel or The Magician and find books where they overlap.</p><a class="btn btn-primary" href="recommends.html#archetypes">Use Archetypes</a></article>
+    <article class="panel"><h3>Explore by Book Path</h3><p>Start with any book and follow a changing path through series order, themes, mood and related shelf energy.</p><a class="btn btn-secondary" href="recommends.html#bookpaths">Use Book Paths</a></article>
   </div>
 </section>
 

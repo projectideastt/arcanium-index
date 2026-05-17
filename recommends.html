@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shelf Recommends uses MythShelf's reading archive to generate recommendations by archetype blend or book-to-book pathway." />
+  <title>Shelf Recommends | MythShelf</title>
+  <link rel="icon" href="assets/mythicshelf-01.ico" sizes="any" />
+  <link rel="shortcut icon" href="assets/mythicshelf-01.ico" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/recommends.css" />
+</head>
+<body>
+  <main class="ms-site rec-page">
+    <div class="ms-shell">
+      <nav class="ms-nav">
+        <a class="ms-brand" href="index.html">
+          <img class="ms-logo-img" src="assets/mythicshelf-01.png" alt="MythShelf logo" />
+          <span>MythShelf</span>
+        </a>
+        <div class="ms-links">
+          <a href="index.html">Home</a>
+          <a href="shelf.html">Full Shelf</a>
+          <a href="recommends.html">Recommends</a>
+          <a href="wish-shelf.html">Wish Shelf</a>
+          <a href="writing.html">Writing</a>
+        </div>
+      </nav>
+
+      <header class="rec-hero">
+        <div class="rec-hero-copy">
+          <div class="eyebrow">✦ MythShelf recommendation tools</div>
+          <h1>Let the shelf <span>recommend.</span></h1>
+          <p>
+            Shelf Recommends turns the reading archive into two public tools: one based on overlapping story archetypes, and one based on book-to-book paths.
+          </p>
+          <div class="rec-entry-grid">
+            <article class="rec-entry-card">
+              <strong>Explore by Archetype</strong>
+              <p>Choose up to three story forces. The tool ranks books where those forces overlap.</p>
+              <a class="btn btn-primary" href="#archetypes">Use Archetypes</a>
+            </article>
+            <article class="rec-entry-card">
+              <strong>Explore by Book Path</strong>
+              <p>Start with any book and follow series, theme, mood and related-shelf pathways.</p>
+              <a class="btn btn-secondary" href="#bookpaths">Use Book Paths</a>
+            </article>
+          </div>
+        </div>
+        <div class="rec-hero-card" aria-hidden="true">
+          <svg class="rec-big-constellation" id="heroConstellation" viewBox="0 0 420 320"></svg>
+        </div>
+      </header>
+
+      <section id="archetypes" class="rec-section">
+        <div class="rec-section-head">
+          <div>
+            <div class="eyebrow">Recommendation tool 01</div>
+            <h2>Explore by <span>Archetype.</span></h2>
+          </div>
+          <div class="rec-info-card">
+            <strong>Select up to three</strong>
+            <p>Pick story archetypes. Books matching more of your selected forces rank higher. Click any recommendation to open it in Book Path.</p>
+          </div>
+        </div>
+
+        <div class="rec-selector-bar">
+          <div>
+            <strong>Archetype modes</strong>
+            <p>Each archetype has its own constellation shape. Combine up to three to create a recommendation blend.</p>
+          </div>
+          <div class="rec-arc-mode-list" id="archetypeModeList"></div>
+        </div>
+
+        <div class="rec-archetype-tool">
+          <article class="rec-constellation-box">
+            <div class="rec-active-blend">
+              <small>Active blend</small>
+              <h3 id="archetypeTitle">The Shadow</h3>
+            </div>
+            <p id="archetypeDescription"></p>
+            <svg class="rec-mini-constellation" id="miniConstellation" viewBox="0 0 420 260" aria-hidden="true"></svg>
+            <div class="pill-row" id="archetypePills"></div>
+            <button class="btn btn-primary" id="sendFirstToHex">Open first match in Book Path</button>
+            <div class="rec-preview-path">
+              <h4>Suggested starting path</h4>
+              <p>This blend can begin a short path through the shelf.</p>
+              <div class="rec-preview-chain" id="previewChain"></div>
+            </div>
+          </article>
+
+          <article class="panel rec-recommendations-panel">
+            <h3>Recommended from this blend</h3>
+            <p id="matchCount">Loading books...</p>
+            <div class="rec-arc-books" id="archetypeBooks"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="bookpaths" class="rec-section">
+        <div class="rec-section-head">
+          <div>
+            <div class="eyebrow">Recommendation tool 02</div>
+            <h2>Explore by <span>Book Path.</span></h2>
+          </div>
+          <div class="rec-info-card">
+            <strong>Choose a centre book</strong>
+            <p>Hover a hex to inspect its card. Click a hex or card to make that book the new centre.</p>
+          </div>
+        </div>
+
+        <div class="rec-mode-panel">
+          <h3>Choose path mode</h3>
+          <div class="rec-mode-toggle">
+            <button class="rec-mode-btn active" data-mode="series">
+              Series Path
+              <span>Follow book order, arcs, authors and related series.</span>
+            </button>
+            <button class="rec-mode-btn" data-mode="myth">
+              Myth Path
+              <span>Follow themes, atmosphere, genre, memory and strange links.</span>
+            </button>
+          </div>
+          <p id="modeDescription">Series Path helps answer: “Where do I go next?”</p>
+          <div class="rec-controls">
+            <input id="bookSearch" type="search" placeholder="Search within the full shelf..." />
+            <select id="bookSelect"></select>
+            <button class="btn btn-secondary" id="randomButton">Random portal</button>
+          </div>
+        </div>
+
+        <section class="rec-board-panel" id="board">
+          <div class="rec-board-title">
+            <div>
+              <div class="eyebrow">Choose the next path</div>
+              <h2 id="boardTitle">Series Path <span>mode.</span></h2>
+            </div>
+            <p id="boardDescription"></p>
+          </div>
+
+          <div class="rec-hex-board">
+            <div class="rec-connector c1"></div><div class="rec-connector c2"></div><div class="rec-connector c3"></div>
+            <div class="rec-connector c4"></div><div class="rec-connector c5"></div><div class="rec-connector c6"></div>
+            <button class="rec-hex rec-hex-center" id="centerHex"></button>
+            <button class="rec-hex rec-hex-pos-1 fade-in" data-slot="0"></button>
+            <button class="rec-hex rec-hex-pos-2 fade-in" data-slot="1"></button>
+            <button class="rec-hex rec-hex-pos-3 fade-in" data-slot="2"></button>
+            <button class="rec-hex rec-hex-pos-4 fade-in" data-slot="3"></button>
+            <button class="rec-hex rec-hex-pos-5 fade-in" data-slot="4"></button>
+            <button class="rec-hex rec-hex-pos-6 fade-in" data-slot="5"></button>
+          </div>
+        </section>
+
+        <section class="rec-current-info">
+          <article class="panel">
+            <h3 id="currentTitle">Loading...</h3>
+            <p id="currentMeta"></p>
+            <div class="pill-row" id="currentPills"></div>
+            <p id="currentHook"></p>
+          </article>
+          <article class="panel">
+            <h3>Current pathway logic</h3>
+            <p id="currentLogic">Series Path shows previous, next, same series, author, kindred series and wild portal routes.</p>
+          </article>
+        </section>
+
+        <section class="rec-path-cards-wrap" id="pathcards">
+          <div class="rec-path-cards-head">
+            <div>
+              <div class="eyebrow">Reason layer</div>
+              <h3>Path cards</h3>
+            </div>
+            <p>Each card explains why a book appears. Click a card to continue the recommendation path.</p>
+          </div>
+          <div class="rec-path-cards" id="pathCards"></div>
+        </section>
+      </section>
+
+      <p class="footer">MythShelf — recommendations generated from a personal shelf of fantasy, science fiction, classics, unfinished quests and stories still calling from the margins.</p>
+    </div>
+  </main>
+  <script src="assets/recommends.js"></script>
+</body>
+</html>

@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="MythShelf is a personal reading archive for fantasy, science fiction, classics, local lore and open portals." />
   <title>Wish Shelf | MythShelf</title>
+  <link rel="icon" href="assets/mythicshelf-01.ico" sizes="any" />
+  <link rel="shortcut icon" href="assets/mythicshelf-01.ico" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
@@ -12,10 +14,14 @@
     <div class="ms-shell">
       
 <nav class="ms-nav">
-  <a class="ms-brand" href="index.html"><span class="ms-mark">◆</span><span>MythShelf</span></a>
+  <a class="ms-brand" href="index.html">
+    <img class="ms-logo-img" src="assets/mythicshelf-01.png" alt="MythShelf logo" />
+    <span>MythShelf</span>
+  </a>
   <div class="ms-links">
     <a href="index.html">Home</a>
     <a href="shelf.html">Full Shelf</a>
+    <a href="recommends.html">Recommends</a>
     <a href="wish-shelf.html">Wish Shelf</a>
     <a href="writing.html">Writing</a>
   </div>
@@ -24,17 +30,18 @@
       
 <div class="eyebrow">Vote the next quest</div>
 <h1>Wish <span>Shelf.</span></h1>
-<p class="intro">Vote for the book you think should move from the Wish Shelf into the reading queue. The form writes to Google Sheets through Apps Script after you add your deployment URL.</p>
+<p class="intro">Books waiting at the edge of the shelf. Vote for the story you think should move closer to the reading queue.</p>
 
 <section>
   <div class="section-head">
-    <div><div class="eyebrow">Sample leaderboard</div><h2>Top voted <span>quests.</span></h2></div>
-    <p>These are placeholders for the public page. Your Google Sheet can store the real vote count.</p>
+    <div><div class="eyebrow">Reader choices</div><h2>Top voted <span>quests.</span></h2></div>
+    <p>A living shortlist of books people think should become the next portal.</p>
   </div>
+
   <div class="card-grid grid-3">
-    <article class="panel"><h3>The Blade Itself</h3><p>Joe Abercrombie · Grimdark Fantasy</p><div class="pill-row"><span class="pill score">18 sample votes</span><span class="pill status">Top Wish</span></div></article>
-    <article class="panel"><h3>The Silmarillion</h3><p>J. R. R. Tolkien · Mythic Fantasy</p><div class="pill-row"><span class="pill score">12 sample votes</span><span class="pill status">Mythic</span></div></article>
-    <article class="panel"><h3>Dune</h3><p>Frank Herbert · Science Fiction</p><div class="pill-row"><span class="pill score">9 sample votes</span><span class="pill blue-pill">Sci-Fi</span></div></article>
+    <article class="panel"><h3>The Blade Itself</h3><p>Joe Abercrombie · Grimdark Fantasy</p><div class="pill-row"><span class="pill status">Top Wish</span><span class="pill score">18 votes</span></div></article>
+    <article class="panel"><h3>The Silmarillion</h3><p>J. R. R. Tolkien · Mythic Fantasy</p><div class="pill-row"><span class="pill status">Mythic</span><span class="pill score">12 votes</span></div></article>
+    <article class="panel"><h3>Dune</h3><p>Frank Herbert · Science Fiction</p><div class="pill-row"><span class="pill blue-pill">Sci-Fi</span><span class="pill score">9 votes</span></div></article>
   </div>
 </section>
 
@@ -43,6 +50,7 @@
     <div><div class="eyebrow">Cast a vote</div><h2>Choose the next <span>portal.</span></h2></div>
     <p>Keep it spoiler-free. Name or nickname is optional.</p>
   </div>
+
   <article class="panel">
     <form class="form" id="voteForm">
       <input name="bookTitle" type="text" placeholder="Book title" required />
