@@ -9,6 +9,16 @@ Public-facing GitHub Pages version of MythShelf.
 - `wish-shelf.html`
 - `writing.html`
 
+## Live data
+
+The public shelf reads from:
+
+`https://docs.google.com/spreadsheets/d/1kd9gestpjoV03IBcvCoEbTo93Ybknr-mm7wiQKLl8DI/export?format=csv&gid=0`
+
+The forms submit to:
+
+`https://script.google.com/macros/s/AKfycbx9A-7XQnXYmffFZso8-eFXh8NqgxiLjqU1TPWwr3Zoh5HqXJTBhGr31hyCe4ASGidc/exec`
+
 ## Icon
 
 The site icon is stored as:
@@ -40,3 +50,12 @@ Recommended Google Sheet columns for best results:
 - `ArchetypeRationale`
 
 Navigation has been updated to include `Recommends`.
+
+
+## Pages
+- `index.html` — homepage with dynamic Top Voted Quests
+- `about.html` — About MythShelf, featuring the logo crest
+- `shelf.html` — Full Shelf
+- `recommends.html` — Shelf Recommends tools
+- `wish-shelf.html` — Wish Shelf voting/suggestions
+- `writing.html` — Writing shelf
